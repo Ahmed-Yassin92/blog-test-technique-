@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block stylesheets %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Karla', sans-serif;
+    }
+
+    .logo a{
+        font-size: 40px;
+        text-decoration: none;
+        margin-left: 100px;
+        }
+    span{
+        color: #f9004d;
+    }
+
+    ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 100px 15px;
+        }
+        ul li a{
+        text-decoration: none;
+        transition: 0.5s;
+        }
+        nav ul li a:hover{
+        color: #f9004d;
+        }
+    
+    .main
+    {
+        background-color: ##0F2A66
+    }
+
+    body{
+        color: #0F2A66;
+    }
+
+
+
+    span{
+        color: #f9004d;
+    }
+    nul li{
+        display: inline-block;
+        list-style: none;
+        margin: 10px 15px;
+    }
+    ul li a{
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    ul li a:hover{
+        color: #BC003E;
+    }
+    
+    .content{
+        margin-left: 100px;
+        margin-top: 10%;
+        max-width: 600px;
+    }
+    .content h2{
+        font-size: 60px
+    }
+    .content p{
+    
+        margin-top: 10px;
+        line-height: 25px;
+    }
+    a{
+        color: #0F2A66;
+    }
+    .link {
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+    .hire{
+        color: #fff;
+        text-decoration: none;
+        background: #0F2A66;
+        padding: 9px 25px;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: 0.5s;
+    
+    }
+    .link .hire:hover{
+        background: transparent;
+        border: 1px solid #BC003E;
+        color: #BC003E;
+    }
+</style>  
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h2>Bienvenue,<br>Nous sommes <br>Un blog</h2>
+    <p>voici notre site web,<br>qui promouvoie des articles</p>
+    </div>
+    <div class="link">
+    <a href="{{ path('app_blog') }}" class="hire">Voir blogs</a>
+    </div>
+</div>
+{% endblock %}

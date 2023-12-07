@@ -1,0 +1,18 @@
+{# templates/login/login.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <h1>Login</h1>
+
+    {# Vérifiez si la variable loginForm existe avant de l'utiliser #}
+    {% if loginForm is defined %}
+        {{ form_start(LoginController) }}
+        {{ form_widget(LoginController) }}
+        <button type="submit">Se connecter</button>
+        {{ form_end(LoginController) }}
+    {% else %}
+        <p>Erreur: La variable loginForm n'est pas définie.</p>
+    {% endif %}
+{% endblock %}

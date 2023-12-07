@@ -1,16 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
 
-        {% block javascripts %}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+    {% block stylesheets %}
+
+<style>
+  button {
+      cursor: pointer;
+      background-color: rgba(0, 136, 169, 1);
+      width: 50%;
+      border: 0;
+      padding: 10px 15px;
+      color: #fff;
+      font-size: 10px;
+      -webkit-transition: 0.3s linear;
+      transition: 0.3s linear;
+    }
+
+  @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+          </style>
+  {% endblock %}
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
     </head>
     <body>
-        {% block body %}{% endblock %}
-    </body>
+        
+
+        {% block javascripts %}
+            
+        {% endblock %}
+    
+  <body class="layout">
+  <h1>hello</h1
+    <header>
+      <nav class="navbar shadow-1 primary">
+        <img src="assets/ase_industry.jpg" alt="" class="brand">
+        <div class="navbar-menu ml-auto">
+            <a class="navbar-link" href="{{ path('app_home') }}">Acceuil</a>
+            <a class="navbar-link" href="{{ path('app_blog') }}">blog</a>
+            <a class="navbar-link" href="{{ path('app_about') }}">A propos </a>
+
+
+                <a class="navbar-link" href="{{path('app_login')}}"><button type="button" class="btn btn-dark btn-sm">Connexion</button></a>
+                <a class="navbar-link" href="{{path('app_registration')}}"><button type="button" class="btn btn-dark btn-sm">Inscription</button></a>
+        </div>
+      </nav>
+    </header>
+  </head>
+
+
+    <main>
+      {% block body %}{% endblock %}
+
+    
+    </main>
+
+    <footer class="footer primary">
+      Copyright © 2023 - test technique
+    </footer>
+        
+  <script src="https://cdn.jsdelivr.net/npm/axentix@2.3.0/dist/axentix.min.js"></script>
+  </body>
 </html>
