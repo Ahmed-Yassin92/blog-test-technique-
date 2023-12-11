@@ -7,7 +7,15 @@
 
     <table class="table">
         <tbody>
-
+            <tr>
+                <th>Id</th>
+                <td>{{ article.id }}</td>
+            </tr>
+            <tr>
+                <th>User_id</th>
+                <td>{{ article.userId }}</td>
+            </tr>
+            <tr>
                 <th>Titre</th>
                 <td>{{ article.name }}</td>
             </tr>
@@ -20,7 +28,7 @@
                 <td>{{ article.content }}</td>
             </tr>
             <tr>
-                <th>date de publication</th>
+                <th>date</th>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
@@ -30,6 +38,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_article_index') }}">retour à la liste</a>
+    <a href="{{ path('app_admin_article_index') }}">back to list</a>
 
+    <a href="{{ path('app_admin_article_edit', {'id': article.id}) }}">edit</a>
+
+    {{ include('admin_article/_delete_form.html.twig') }}
 {% endblock %}
