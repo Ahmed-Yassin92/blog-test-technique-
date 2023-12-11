@@ -7,7 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ArticleFormType extends AbstractType
+class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -15,8 +15,8 @@ class ArticleFormType extends AbstractType
             ->add('user_id')
             ->add('name')
             ->add('description')
-            ->add('context')
-            ->add('created_ad')
+            ->add('content')
+            ->add('created_at')
             ->add('image')
         ;
     }

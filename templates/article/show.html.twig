@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    <h1>Article</h1>
+
+    <table class="table">
+        <tbody>
+
+                <th>Titre</th>
+                <td>{{ article.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ article.description }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ article.content }}</td>
+            </tr>
+            <tr>
+                <th>date de publication</th>
+                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ article.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_article_index') }}">retour à la liste</a>
+
+{% endblock %}

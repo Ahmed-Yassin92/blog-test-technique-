@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\RaitingRepository;
+use App\Repository\RatingRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: RaitingRepository::class)]
-class Raiting
+#[ORM\Entity(repositoryClass: RatingRepository::class)]
+class Rating
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,7 +14,7 @@ class Raiting
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $articles_id = null;
+    private ?int $article_id = null;
 
     #[ORM\Column]
     private ?int $user_id = null;
@@ -27,14 +27,21 @@ class Raiting
         return $this->id;
     }
 
-    public function getArticlesId(): ?int
+    public function setId(int $id): static
     {
-        return $this->articles_id;
+        $this->id = $id;
+
+        return $this;
     }
 
-    public function setArticlesId(int $articles_id): static
+    public function getArticleId(): ?int
     {
-        $this->articles_id = $articles_id;
+        return $this->article_id;
+    }
+
+    public function setArticleId(int $article_id): static
+    {
+        $this->article_id = $article_id;
 
         return $this;
     }

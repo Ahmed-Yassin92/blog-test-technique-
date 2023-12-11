@@ -20,14 +20,14 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $context = null;
+    private ?string $content = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $created_ad = null;
+    private ?\DateTimeInterface $created_at = null;
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
@@ -35,6 +35,13 @@ class Article
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): static
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getUserId(): ?int
@@ -73,26 +80,26 @@ class Article
         return $this;
     }
 
-    public function getContext(): ?string
+    public function getContent(): ?string
     {
-        return $this->context;
+        return $this->content;
     }
 
-    public function setContext(string $context): static
+    public function setContent(string $content): static
     {
-        $this->context = $context;
+        $this->content = $content;
 
         return $this;
     }
 
-    public function getCreatedAd(): ?\DateTimeInterface
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->created_ad;
+        return $this->created_at;
     }
 
-    public function setCreatedAd(\DateTimeInterface $created_ad): static
+    public function setCreatedAt(\DateTimeInterface $created_at): static
     {
-        $this->created_ad = $created_ad;
+        $this->created_at = $created_at;
 
         return $this;
     }
