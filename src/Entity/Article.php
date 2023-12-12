@@ -30,7 +30,7 @@ class Article
     private ?\DateTimeInterface $created_at = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
+    private $image;
 
     public function getId(): ?int
     {
@@ -109,7 +109,7 @@ class Article
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(string $image): self
     {
         $this->image = $image;
 
