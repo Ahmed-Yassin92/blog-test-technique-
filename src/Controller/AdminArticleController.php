@@ -35,6 +35,7 @@ class AdminArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $entityManager->persist($article);
             $entityManager->flush();
 
